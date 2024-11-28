@@ -1,0 +1,16 @@
+How LDA works:
+Initialization:
+
+LDA starts by randomly assigning each word in each document to one of the topics (based on the number of topics you specify).
+Iterative Refinement:
+
+It then iteratively refines the topic assignment of each word based on two things:
+The distribution of topics in the document.
+The distribution of words in the topic.
+The model continues adjusting the topic assignments of words in each document, reassigning words to topics in a way that maximizes the likelihood of the observed data under the model.
+Number of Topics:
+
+If you specify 2 topics (num_topics=2), LDA will try to divide the corpus into two distinct topics, and during the iterations, it will find the best division of the words across these two topics. It does not randomly pick the topics — instead, it finds the most likely distribution of words across the specified topics.
+Topic Distribution:
+
+The result of LDA is the topic distributions across all documents, where each document is a mixture of the two topics. Also, each topic is a distribution over words.
